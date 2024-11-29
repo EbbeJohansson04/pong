@@ -36,7 +36,7 @@ namespace EasyDemo2
                 Racket racket = (Racket)GetOneIntersectingActor(typeof(Racket));
                 float angle = (this.Y - racket.Y) / 1;
 
-                /*if (this.X > 400)
+                if (this.X > 400)
                 {
                     Rotation = angle;
                     this.X = 750;
@@ -45,7 +45,7 @@ namespace EasyDemo2
                 {
                     Rotation = angle;
                     this.X = 50;
-                }*/
+                }
 
             }
 
