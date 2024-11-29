@@ -1,7 +1,9 @@
 ﻿using EasyMonoGame;
-using EasyDemo2; // The namespace of your game.
-// Set starting world.
-EasyGame.Instance.ActiveWorld = new MyWorld();
-// Run the game.
-EasyGame.Instance.Run();
+using EasyDemo2;
 
+
+// Starting world
+EasyGame.Instance.ActiveWorld = new MyWorld();
+
+// Run the game
+EasyGame.Instance.Run();

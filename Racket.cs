@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EasyMonoGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+
 
 namespace EasyDemo2
 {
@@ -15,11 +17,11 @@ namespace EasyDemo2
         private Keys keyUp = Keys.W;
         private Keys keyDown = Keys.S;
 
+
         public Racket(Keys keyUp, Keys keyDown)
         {
             this.keyUp = keyUp;
             this.keyDown = keyDown;
-
         }
 
         public override void Update(GameTime gameTime)
@@ -31,11 +33,12 @@ namespace EasyDemo2
             {
                 Y -= deltaTime * speed;
             }
-            else if (keyBoardState.IsKeyDown(keyDown))
+            if (keyBoardState.IsKeyDown(keyDown))
             {
                 Y += deltaTime * speed;
-
             }
+
+
         }
     }
 }

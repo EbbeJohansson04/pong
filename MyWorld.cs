@@ -12,12 +12,10 @@ namespace EasyDemo2
     {
         public MyWorld() : base(800, 600)
         {
-            // Tile background with the file "bluerock" in the Content folder.
             BackgroundTileName = "bluerock";
-
             Add(new Ball(), "ball", 400, 300);
             Add(new Racket(Keys.W, Keys.S), "lighthouse", 20, 300);
             Add(new Racket(Keys.Up, Keys.Down), "lighthouse", 780, 300);
-        }  
+        }
     }
 }
