@@ -13,7 +13,7 @@ namespace EasyDemo2
 {
     internal class Racket : Actor
     {
-        private float speed = 1000;
+        private float speed = 800;
         private Keys keyUp = Keys.W;
         private Keys keyDown = Keys.S;
 

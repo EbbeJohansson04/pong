@@ -32,32 +32,53 @@ namespace EasyDemo2
                 return;
             }
 
-            if(IsTouching(typeof(Racket))){
+            if (IsTouching(typeof(Racket)))
+            {
                 Racket racket = (Racket)GetOneIntersectingActor(typeof(Racket));
-                float angle = (this.Y - racket.Y) / 1;
+                float angle = (this.Y - racket.Y);
 
                 if (this.X > 400)
                 {
-                    Rotation = angle;
-                    this.X = 750;
+                    Rotation = -angle + 180;
+                    this.X = 700;
+                    World.ShowText("angle: " + angle, 400, 500);
                 }
                 else
                 {
-                    Rotation = angle;
-                    this.X = 50;
+                    Rotation = angle +180;
+                    this.X = 100;
+
+                    World.ShowText("angle: " + angle, 400, 500);
+
+
+
                 }
 
+
             }
+
 
 
             if (this.X > 800)
             {
                 Rscore += 1;
+                Speed = -Speed;
+
             }
             if (this.X < 0)
             {
                 Lscore += 1;
+                Speed = -Speed;
             }
+            if (this.Y > 600)
+            {
+                Turn((180 - Rotation) * 2);
+            }
+            if (this.Y < 0)
+            {
+                Turn((180 - Rotation) * 2);
+            }
+
             World.ShowText(" " + Rscore, 100, 100);
             World.ShowText(" " + Lscore, 700, 100);
         }
