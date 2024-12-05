@@ -16,10 +16,10 @@ namespace EasyDemo2
         private int Rscore;
 
         private float pause_time;
-
+ 
         public Ball()
         {
-            ScaleRadius = 0.5f;
+            //ScaleRadius = 0.5f;
         }
 
         public override void Update(GameTime gameTime)
@@ -36,26 +36,52 @@ namespace EasyDemo2
             {
                 Racket racket = (Racket)GetOneIntersectingActor(typeof(Racket));
                 float angle = (this.Y - racket.Y);
-
+                
+                
                 if (this.X > 400)
                 {
-                    Rotation = -angle + 180;
-                    this.X = 700;
+                    Rotation = -angle;
+                    //this.X = 600;
+                    //this.X = 745;
                     World.ShowText("angle: " + angle, 400, 500);
                 }
                 else
                 {
-                    Rotation = angle +180;
-                    this.X = 100;
-
+                    Rotation = angle;   
+                    //this.X = 55;
                     World.ShowText("angle: " + angle, 400, 500);
-
-
-
                 }
 
-
+                Speed = -Speed;
+                Move(Speed * deltaTime);
             }
+//                if (this.X > 400)
+//                {
+//                    Rotation = -angle + 180;
+//                    //this.X = 600;
+//                    Move(Speed * deltaTime * 5);
+//                    Speed += 10;
+//                    World.ShowText("angle: " + angle, 400, 500);
+//                }
+//                else
+//                { 
+//                
+//                    if (-45 < angle && angle < 45)
+//                    {
+//                        Rotation = angle;
+//                    }
+//                    else
+//                    {
+//                        Rotation = 0;
+//                    }
+                    
+//                    this.X = 200;
+//                    Speed += 10;
+//                    World.ShowText("angle: " + angle, 400, 500);
+//                }
+
+
+ //           }
 
 
 
