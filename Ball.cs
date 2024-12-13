@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EasyMonoGame;
+using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 using static System.Formats.Asn1.AsnWriter;
 
@@ -10,7 +11,7 @@ namespace EasyDemo2
 {
     internal class Ball : Actor
     {
-        private float Speed = 500;
+        private float Speed = 1000;
 
         private int Lscore;
         private int Rscore;
@@ -36,52 +37,57 @@ namespace EasyDemo2
             {
                 Racket racket = (Racket)GetOneIntersectingActor(typeof(Racket));
                 float angle = (this.Y - racket.Y);
-                
-                
                 if (this.X > 400)
                 {
                     Rotation = -angle;
-                    //this.X = 600;
-                    //this.X = 745;
+                    this.X = 750;
                     World.ShowText("angle: " + angle, 400, 500);
+                    if (Speed < 1000)
+                    {
+                        Speed += 10;
+                    }
                 }
                 else
                 {
-                    Rotation = angle;   
-                    //this.X = 55;
+                    Rotation = angle;
+                    this.X = 50;
                     World.ShowText("angle: " + angle, 400, 500);
+                    if (Speed > 1000)
+                    {
+                        Speed -= 10;
+                    }
                 }
-
+                World.ShowText("speed: " + Speed, 400, 550);
                 Speed = -Speed;
                 Move(Speed * deltaTime);
             }
-//                if (this.X > 400)
-//                {
-//                    Rotation = -angle + 180;
-//                    //this.X = 600;
-//                    Move(Speed * deltaTime * 5);
-//                    Speed += 10;
-//                    World.ShowText("angle: " + angle, 400, 500);
-//                }
-//                else
-//                { 
-//                
-//                    if (-45 < angle && angle < 45)
-//                    {
-//                        Rotation = angle;
-//                    }
-//                    else
-//                    {
-//                        Rotation = 0;
-//                    }
-                    
-//                    this.X = 200;
-//                    Speed += 10;
-//                    World.ShowText("angle: " + angle, 400, 500);
-//                }
+            //                if (this.X > 400)
+            //                {
+            //                    Rotation = -angle + 180;
+            //                    //this.X = 600;
+            //                    Move(Speed * deltaTime * 5);
+            //                    Speed += 10;
+            //                    World.ShowText("angle: " + angle, 400, 500);
+            //                }
+            //                else
+            //                { 
+            //                
+            //                    if (-45 < angle && angle < 45)
+            //                    {
+            //                        Rotation = angle;
+            //                    }
+            //                    else
+            //                    {
+            //                        Rotation = 0;
+            //                    }
+
+            //                    this.X = 200;
+            //                    Speed += 10;
+            //                    World.ShowText("angle: " + angle, 400, 500);
+            //                }
 
 
- //           }
+            //           }
 
 
 
